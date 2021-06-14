@@ -69,3 +69,11 @@ Finally we plot a graph showing the accuracy levels of the different models
 
 ## Prediction
 Here we finally load the test cases and try and predict whether the person survived or not. We need to correct the file as mentioned before applying our model. Once our model is applied we can save the data frame as separate csv file for final upload.
+
+
+Hope you find it useful, 
+
+Appu_13
+
+Ps I have included my top models as .rds files you can used them if you like 
+Cheers!!
