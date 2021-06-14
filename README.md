@@ -2,7 +2,6 @@
 This is my submission for the kaggle titanic problem. You can check it out [here](https://www.kaggle.com/c/titanic/overview). The problem is well documented and has a lot of solutions but here I try to implement my take on the problem. Hope you like it. XD
 
 ## Data analysis and cleaning
-The code is written in python, one of my friends : @ helped me with this section so do check her out
 
 At the start we import the dataset and the needed libraries. After inital viewing of the shape, info and description of the data we find that we have missing elements in the Age, Embarked and Cabin columns so we need to perform some manipulation of the data
 
@@ -66,3 +65,7 @@ Initalize we use a 70-30 splitting for our cleaned data. The codes grows quite b
 4) Calculate the accuracy = (sum(diag(confusion matrix))/ total number of test cases) * 100
 
 Finally we plot a graph showing the accuracy levels of the different models
+
+
+## Prediction
+Here we finally load the test cases and try and predict whether the person survived or not. We need to correct the file as mentioned before applying our model. Once our model is applied we can save the data frame as separate csv file for final upload.

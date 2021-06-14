@@ -14,16 +14,16 @@ test = subset(data, split == F)
 
 
 # Building the tree model
-tree = ctree(formula = Survived ~ Age+Pclass+as.factor(Sex)+Parch+SibSp+Fare, data = train)
+tree2 = ctree(formula = Survived ~ Age+Pclass+(Sex)+Parch+SibSp+Fare+PassengerId, data = train)
 plot(tree)
 
-pred = predict(tree,test)
+pred = predict(tree2,test)
 acc = addmargins( table (round(pred),test$Survived))
-accuracy.tree = (acc[1,1] +acc[2,2])/268 *100
+accuracy.tree2 = (acc[1,1] +acc[2,2])/268 *100
 
 
 #Building the random forest model
-forest = randomForest(formula = Survived ~ Age+Pclass+as.factor(Sex)+Parch+SibSp+Fare, data = train)
+forest = randomForest(formula = Survived ~ Age+Pclass+Sex+Parch+SibSp+Fare, data = train)
 
 pred2 = predict(forest,test)
 acc2 = addmargins(table(round(pred2), test$Survived))
@@ -72,3 +72,9 @@ accuracy.table <- data.frame(names,accuracies)
 ggplot(accuracy.table,aes(x = names, y = accuracies, fill = names)) +
   geom_bar(size = 5, stat = 'identity') +
   ggtitle("Accuracy of different models")
+
+
+# Saving the svm and random forest models
+saveRDS(SVM, "Support Vector.rds")
+saveRDS(forest,"random forest.rds")
+
